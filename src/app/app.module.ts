@@ -61,6 +61,10 @@ const routes: Route[] = [
     component: PetCadastroComponent
   },
   {
+    path: 'pet/edicao_pet/:id',
+    component: PetCadastroComponent
+  },
+  {
     path: 'estoque/cadastro_estoque',
     component: EstoqueCadastroComponent
   },

@@ -21,9 +21,11 @@
             <td>{{pet.nome}}</td>
             <td>{{pet.raca}}</td>
             <td>{{pet.cor}}</td>
-            <!-- <td>{{getNameDono(pet)}}</td> -->
             <td>
-                <button class="btn btn-warning" [routerLink]="['edicao_pessoa', pet.id]">Editar</button>
+                {{getNomeDono(pet)}}
+            </td>
+            <td>
+                <button class="btn btn-warning" [routerLink]="['edicao_pet', pet.id]">Editar</button>
             </td>
             <td>
                 <button class="btn ms-1 btn-danger" (click)="remove(pet)">Excluir</button>

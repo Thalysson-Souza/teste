@@ -13,9 +13,13 @@ import { PessoaService } from '../pessoa/pessoa.service';
 })
 export class FuncionarioCadastroComponent implements OnInit {
   isUpdate: boolean = false;
+  selectedPessoa: string = '0';
   pessoas: Pessoa[] = [];
   funcionarioForm: FormGroup = this.formBuilder.group({
     id: 0,
+    id_pessoa: [
+      [Validators.required]
+    ],
     funcao: [
       '',
       [Validators.required, Validators.minLength(2), Validators.maxLength(50)],
@@ -49,6 +53,10 @@ export class FuncionarioCadastroComponent implements OnInit {
     }
   }
 
+  onSelected(value: string): void {
+    this.selectedPessoa = value;
+  }
+
   listPessoas() {
     this.pessoaService.getPessoas().subscribe(
       (pessoas) => {
@@ -68,6 +76,7 @@ export class FuncionarioCadastroComponent implements OnInit {
     console.log(this.funcionarioForm.value);
 
     const funcionario: Funcionario = this.funcionarioForm.value;
+    funcionario.id_pessoa = parseInt(this.funcionarioForm.value.id_pessoa);
 
     if (funcionario.id) {
       this.funcionarioService.update(funcionario).subscribe(() => this.redirect());

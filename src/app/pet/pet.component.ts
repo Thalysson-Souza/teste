@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Pessoa } from '../pessoa/pessoa.interface';
 import { PessoaService } from '../pessoa/pessoa.service';
 import { Pet } from './pet.interface';
 import { PetService } from './pet.service';
@@ -10,6 +11,8 @@ import { PetService } from './pet.service';
 })
 export class PetComponent implements OnInit {
   pets: Pet[] = [];
+  pessoas: Pessoa[] = [];
+  temp: string = '';
 
   constructor(
     private petService: PetService,
@@ -18,6 +21,7 @@ export class PetComponent implements OnInit {
 
   ngOnInit(): void {
     this.list();
+    this.listPessoas();
   }
 
   list() {
@@ -45,10 +49,11 @@ export class PetComponent implements OnInit {
       }
     );
   }
-  getNameDono({ id_dono }: Pet) {
-    this.pessoaService.getPessoa(id_dono).subscribe(
-      (result) => {
-        return `${result.nome} ${result.sobrenome}`
+
+  listPessoas() {
+    this.pessoaService.getPessoas().subscribe(
+      (pessoas) => {
+        this.pessoas = pessoas;
       },
       (erro) => {
         console.log('Erro: ', erro);
@@ -58,5 +63,32 @@ export class PetComponent implements OnInit {
       }
     );
   }
+
+  getNomeDono({ id_dono }: Pet): string {
+    let temp = this.pessoas.filter(i => i.id === id_dono);
+    if (temp.length === 0) {
+      return 'Dono não existe'
+    } else {
+      return `${temp[0].nome} ${temp[0].sobrenome}`
+    }
+  }
+
+  // getNameDono({ id_dono }: Pet) {
+  // getNameDono(id: number): any {
+  //   // this.pessoaService.getPessoa(id_dono).subscribe(
+  //   this.pessoaService.getPessoa(id).subscribe(
+  //     (result) => {
+  //       // console.log(`${result.nome} ${result.sobrenome}`)
+  //       this.temp = `${result.nome} ${result.sobrenome}`
+  //       return this.temp;
+  //     },
+  //     (erro) => {
+  //       console.log('Erro: ', erro);
+  //     },
+  //     () => {
+  //       console.log('Terminou!');
+  //     }
+  //   );
+  // }
 
 }

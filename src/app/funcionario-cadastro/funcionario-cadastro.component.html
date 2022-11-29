@@ -2,7 +2,7 @@
 <form [formGroup]="funcionarioForm" (ngSubmit)="onSubmit()" class="col-8 offset-2">
     <div class="mb-3">
         <label for="selectedPessoa">Pessoa: </label>
-        <select class="form-select">
+        <select class="form-select" formControlName="id_pessoa" #pessoa (change)="onSelected(pessoa.value)">
             <option *ngFor="let pessoa of pessoas" value={{pessoa.id}}>
                 {{pessoa.nome + ' '+ pessoa.sobrenome}}
             </option>

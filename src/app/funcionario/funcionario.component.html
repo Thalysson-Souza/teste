@@ -7,6 +7,7 @@
     <thead>
         <tr>
             <th scope="col">id</th>
+            <th scope="col">Nome</th>
             <th scope="col">Função</th>
             <th scope="col">Salário</th>
             <th scope="col">Editar</th>
@@ -16,6 +17,9 @@
     <tbody *ngFor="let funcionario of funcionarios">
         <tr>
             <th scope="row">{{funcionario.id}}</th>
+            <td>
+                {{getNomePessoa(funcionario)}}
+            </td>
             <td>{{funcionario.funcao}}</td>
             <td>{{funcionario.salario}}</td>
             <td>

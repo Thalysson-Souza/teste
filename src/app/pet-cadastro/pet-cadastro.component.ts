@@ -12,6 +12,7 @@ import { PetService } from '../pet/pet.service';
   styleUrls: ['./pet-cadastro.component.css']
 })
 export class PetCadastroComponent implements OnInit {
+  isUpdate: boolean = false;
   selectedPessoa: string = '0';
   pessoas: Pessoa[] = [];
   petForm: FormGroup = this.formBuilder.group({
@@ -43,11 +44,20 @@ export class PetCadastroComponent implements OnInit {
 
   ngOnInit(): void {
     this.listPessoas();
+    const id = +this.activatedRoute.snapshot.params['id'];
+    console.log(id);
+    if (id) {
+      this.isUpdate = true;
+      this.petService.getPet(id).subscribe((pet) => {
+        console.log(pet);
+        this.petForm.patchValue(pet);
+      }, (erro) => {
+        console.log('Erro: ', erro);
+      })
+    }
   }
 
   onSelected(value: string): void {
-    console.log('value')
-    console.log(value)
     this.selectedPessoa = value;
   }
 
@@ -68,7 +78,9 @@ export class PetCadastroComponent implements OnInit {
   onSubmit() {
     console.log(this.petForm.valid);
     console.log(this.petForm.value);
+
     const pet: Pet = this.petForm.value;
+    pet.id_dono = parseInt(this.petForm.value.id_dono)
 
     if (pet.id) {
       this.petService.update(pet).subscribe(() => this.redirect());

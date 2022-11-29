@@ -20,10 +20,10 @@
   "pet": [
     {
       "id": 1,
-      "nome": "twetwetwet",
-      "raca": "etwtewet",
-      "cor": "wetwetwe",
-      "id_dono": "1"
+      "nome": "etwtweewt",
+      "raca": "wtwetwet",
+      "cor": "wetwete",
+      "id_dono": 2
     }
   ],
   "estoque": [
@@ -45,5 +45,12 @@
       "deslocamento": false
     }
   ],
-  "funcionario": []
+  "funcionario": [
+    {
+      "id": 1,
+      "id_pessoa": 1,
+      "funcao": "Caixa",
+      "salario": "15000"
+    }
+  ]
 }

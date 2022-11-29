@@ -4,4 +4,5 @@ export interface Pet {
     raca: string,
     cor: string,
     id_dono: number,
+    // nome_dono?: string,
 }
