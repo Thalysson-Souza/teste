@@ -1,0 +1,21 @@
+.colorNavBar {
+    background-color: #9dcaeb !important;
+}
+
+.colorNavBar a {
+    color: #3c6c90 !important;
+}
+
+.logo {
+    width: 50px;
+}
+
+.titleAndLogo {
+    display: flex;
+    align-items: center;
+}
+
+.h5Custom {
+    margin-bottom: 0px;
+    margin-left: 10px;
+}

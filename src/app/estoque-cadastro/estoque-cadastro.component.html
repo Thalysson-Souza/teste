@@ -1,0 +1,35 @@
+<h1 class="mt-3 text-center">Cadastro de Produtos</h1>
+<form [formGroup]="estoqueForm" (ngSubmit)="onSubmit()" class="col-8 offset-2">
+    <div class="mb-3">
+        <label for="descricao">Descrição: </label>
+        <input class="form-control" id="descricao" type="text" formControlName="descricao" />
+    </div>
+    <div class="mb-3">
+        <label for="quantidade">Quantidade: </label>
+        <input class="form-control" id="quantidade" type="number" formControlName="quantidade" />
+    </div>
+    <div class="mb-3">
+        <label for="valor">Valor: </label>
+        <div class="input-group ">
+            <span class="input-group-text">R$</span>
+            <span class="input-group-text">0,00</span>
+            <input class="form-control" id="valor" type="text" formControlName="valor" />
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="fornecedor">Fornecedor: </label>
+        <input class="form-control" id="fornecedor" type="text" formControlName="fornecedor" />
+    </div>
+    <div class="mb-3">
+        <label for="fabricante">Fabricante: </label>
+        <input class="form-control" id="fabricante" type="text" formControlName="fabricante" />
+    </div>
+    <div class="mt-5 text-center">
+        <button type="submit" [disabled]="!estoqueForm.valid" class="btn btn-success">
+            {{isUpdate ? 'Atualizar' : 'Cadastrar'}}
+        </button>
+        <a [routerLink]="['/estoque']">
+            <button type="reset" class="btn btn-secondary ms-1">Cancelar</button>
+        </a>
+    </div>
+</form>

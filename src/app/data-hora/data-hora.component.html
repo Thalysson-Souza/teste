@@ -1,0 +1,8 @@
+<!-- <p> {{dataHoraString}} </p> -->
+<p> 
+    {{ dataHora | date : 'dd/MM/yyyy HH:mm:ss'}} 
+    <button (click)="toggleTimer()">
+        {{ timer ? 'Parar' : 'Continuar'}}
+    </button>
+</p>
+<p> {{ valor | currency: 'R$' }} </p>

@@ -1,0 +1,35 @@
+<div class="alignButtonCadastro">
+    <a [routerLink]="['cadastro_pessoa']">
+        <Button class="btn btn-pet">Cadastrar</Button>
+    </a>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Sobrenome</th>
+            <th scope="col">CPF</th>
+            <th scope="col">Data de Nascimento</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Excluir</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let pessoa of pessoas">
+        <tr>
+            <th scope="row">{{pessoa.id}}</th>
+            <td>{{pessoa.nome}}</td>
+            <td>{{pessoa.sobrenome}}</td>
+            <td>{{pessoa.cpf}}</td>
+            <td>{{pessoa.dataNascimento | date:'dd/MM/YY'}}</td>
+            <td>{{pessoa.telefone}}</td>
+            <td>
+                <button class="btn btn-warning" [routerLink]="['edicao_pessoa', pessoa.id]">Editar</button>
+            </td>
+            <td>
+                <button class="btn ms-1 btn-danger" (click)="remove(pessoa)">Excluir</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

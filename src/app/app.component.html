@@ -1,0 +1,26 @@
+<!-- 
+<hello-world></hello-world>
+<data-hora></data-hora> 
+<livros-cadastro></livros-cadastro>
+<livros></livros>
+-->
+<nav class="navbar navbar-expand-lg colorNavBar">
+    <div class="container">
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <a class="nav-link active titleAndLogo" aria-current="page" [routerLink]="['/']">
+                    <li class="nav-item titleAndLogo">
+                        <img src="../assets/sofistpets.png" class="logo">
+                        <h5 class="h5Custom">Sofistpets</h5>
+                    </li>
+                </a>
+            </ul>
+            <!-- <div class="d-flex" role="search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </div> -->
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

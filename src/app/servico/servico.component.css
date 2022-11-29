@@ -1,0 +1,11 @@
+.alignButtonCadastro {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-pet {
+    background-color: #3c6c90;
+    color: #ebf4fb;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}

@@ -1,0 +1,49 @@
+{
+  "pessoa": [
+    {
+      "id": 1,
+      "nome": "Jobiscraudo",
+      "sobrenome": "Afonso",
+      "cpf": 12345678910,
+      "telefone": "4899998888",
+      "dataNascimento": "2000-01-01"
+    },
+    {
+      "id": 2,
+      "nome": "teste ana",
+      "sobrenome": "020202",
+      "cpf": "22222222222",
+      "telefone": "2222222222",
+      "dataNascimento": "2000-01-01"
+    }
+  ],
+  "pet": [
+    {
+      "id": 1,
+      "nome": "twetwetwet",
+      "raca": "etwtewet",
+      "cor": "wetwetwe",
+      "id_dono": "1"
+    }
+  ],
+  "estoque": [
+    {
+      "id": 1,
+      "descricao": "teste ana",
+      "quantidade": 1,
+      "valor": "1,5",
+      "fornecedor": "teste ana",
+      "fabricante": "Ana fabricas"
+    }
+  ],
+  "servico": [
+    {
+      "id": 1,
+      "descricao": "teste ana123",
+      "valor": "550",
+      "tempo": "+-30min",
+      "deslocamento": false
+    }
+  ],
+  "funcionario": []
+}

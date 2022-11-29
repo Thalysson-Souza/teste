@@ -1,0 +1,31 @@
+<h1 class="mt-3 text-center">Cadastro de Funcionários</h1>
+<form [formGroup]="funcionarioForm" (ngSubmit)="onSubmit()" class="col-8 offset-2">
+    <div class="mb-3">
+        <label for="selectedPessoa">Pessoa: </label>
+        <select class="form-select">
+            <option *ngFor="let pessoa of pessoas" value={{pessoa.id}}>
+                {{pessoa.nome + ' '+ pessoa.sobrenome}}
+            </option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="funcao">Função: </label>
+        <input class="form-control" id="funcao" type="text" formControlName="funcao" />
+    </div>
+    <div class="mb-3">
+        <label for="salario">Salário: </label>
+        <div class="input-group ">
+            <span class="input-group-text">R$</span>
+            <span class="input-group-text">0,00</span>
+            <input class="form-control" id="salario" type="text" formControlName="salario" />
+        </div>
+    </div>
+    <div class="mt-5 text-center">
+        <button type="submit" [disabled]="!funcionarioForm.valid" class="btn btn-success">
+            {{isUpdate ? 'Atualizar' : 'Cadastrar'}}
+        </button>
+        <a [routerLink]="['/estoque']">
+            <button type="reset" class="btn btn-secondary ms-1">Cancelar</button>
+        </a>
+    </div>
+</form>

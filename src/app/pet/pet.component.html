@@ -1,0 +1,33 @@
+<div class="alignButtonCadastro">
+    <a [routerLink]="['cadastro_pet']">
+        <Button class="btn btn-pet">Cadastrar</Button>
+    </a>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Raça</th>
+            <th scope="col">Cor</th>
+            <th scope="col">Dono</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Excluir</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let pet of pets">
+        <tr>
+            <th scope="row">{{pet.id}}</th>
+            <td>{{pet.nome}}</td>
+            <td>{{pet.raca}}</td>
+            <td>{{pet.cor}}</td>
+            <!-- <td>{{getNameDono(pet)}}</td> -->
+            <td>
+                <button class="btn btn-warning" [routerLink]="['edicao_pessoa', pet.id]">Editar</button>
+            </td>
+            <td>
+                <button class="btn ms-1 btn-danger" (click)="remove(pet)">Excluir</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

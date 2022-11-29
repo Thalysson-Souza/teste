@@ -1,0 +1,33 @@
+.displayGrid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card {
+    margin-bottom: 15px;
+    width: 16rem;
+    margin: 10px auto;
+}
+
+.card-body {
+    background-color: #9dcaeb !important;
+    color: #3c6c90 !important;
+}
+
+.card-body:hover {
+    background-color: #7ca5c2 !important;
+}
+
+img {
+    height: 170.5px;
+    width: 254px;
+}
+
+body {
+    background-image: url("../../assets/teste02.png") !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+}

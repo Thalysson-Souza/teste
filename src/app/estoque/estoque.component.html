@@ -1,0 +1,36 @@
+<div class="alignButtonCadastro">
+    <a [routerLink]="['cadastro_estoque']">
+        <Button class="btn btn-pet">Cadastrar</Button>
+    </a>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Descrição</th>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Valor (Un)</th>
+            <th scope="col">Fornecedor</th>
+            <th scope="col">Fabricante</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Excluir</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let estoque of estoques">
+        <tr>
+            <th scope="row">{{estoque.id}}</th>
+            <td>{{estoque.descricao}}</td>
+            <td>{{estoque.quantidade}}</td>
+            <!-- <td>{{estoque.valor | currency: 'R$'}}</td> -->
+            <td>{{estoque.valor}}</td>
+            <td>{{estoque.fornecedor}}</td>
+            <td>{{estoque.fabricante}}</td>
+            <td>
+                <button class="btn btn-warning" [routerLink]="['edicao_estoque', estoque.id]">Editar</button>
+            </td>
+            <td>
+                <button class="btn ms-1 btn-danger" (click)="remove(estoque)">Excluir</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

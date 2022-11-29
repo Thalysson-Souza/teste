@@ -1,0 +1,29 @@
+<div class="alignButtonCadastro">
+    <a [routerLink]="['cadastro_funcionario']">
+        <Button class="btn btn-pet">Cadastrar</Button>
+    </a>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Função</th>
+            <th scope="col">Salário</th>
+            <th scope="col">Editar</th>
+            <th scope="col">Excluir</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let funcionario of funcionarios">
+        <tr>
+            <th scope="row">{{funcionario.id}}</th>
+            <td>{{funcionario.funcao}}</td>
+            <td>{{funcionario.salario}}</td>
+            <td>
+                <button class="btn btn-warning" [routerLink]="['edicao_funcionario', funcionario.id]">Editar</button>
+            </td>
+            <td>
+                <button class="btn ms-1 btn-danger" (click)="remove(funcionario)">Excluir</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
