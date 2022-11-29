@@ -76,7 +76,13 @@ export class FuncionarioCadastroComponent implements OnInit {
     console.log(this.funcionarioForm.value);
 
     const funcionario: Funcionario = this.funcionarioForm.value;
-    funcionario.id_pessoa = parseInt(this.funcionarioForm.value.id_pessoa);
+    try {
+      funcionario.id_pessoa = parseInt(this.funcionarioForm.value.id_pessoa);
+      funcionario.salario = parseFloat(this.funcionarioForm.value.salario);
+    } catch {
+      alert('Há valores inválidos.');
+      return;
+    }
 
     if (funcionario.id) {
       this.funcionarioService.update(funcionario).subscribe(() => this.redirect());

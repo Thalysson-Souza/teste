@@ -21,7 +21,7 @@
                 {{getNomePessoa(funcionario)}}
             </td>
             <td>{{funcionario.funcao}}</td>
-            <td>{{funcionario.salario}}</td>
+            <td>{{funcionario.salario | currency: 'R$'}}</td>
             <td>
                 <button class="btn btn-warning" [routerLink]="['edicao_funcionario', funcionario.id]">Editar</button>
             </td>

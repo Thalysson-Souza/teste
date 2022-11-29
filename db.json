@@ -49,8 +49,8 @@
     {
       "id": 1,
       "id_pessoa": 1,
-      "funcao": "Caixa",
-      "salario": "15000"
+      "funcao": "teste",
+      "salario": 1800
     }
   ]
 }
